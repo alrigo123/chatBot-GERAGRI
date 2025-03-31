@@ -1,0 +1,197 @@
+/* Contenedor principal del chat */
+#chat-container {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  width: 21.875rem;
+  max-height: 40.625rem;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+/* Cabecera del chat */
+#chat-header {
+  background: #7ab730;
+  color: #fff;
+  padding: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+#chat-header span {
+  font-weight: bold;
+}
+#chat-header .header-btns {
+  display: flex;
+  gap: 5px;
+}
+#chat-header button {
+  background: transparent;
+  color: #000000;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border:none;
+}
+
+.header-btns{
+  margin-left: 15.625rem;
+  font-weight: bold;
+}
+/* Cuerpo del chat */
+#chat-body {
+  display: flex;
+  flex-direction: column;
+}
+/* Caja de mensajes con altura fija y scroll */
+#chat-box {
+  height: 25rem;
+  padding: 0.938rem;
+  overflow-y: scroll;
+}
+/* Opciones (botones) */
+#options {
+  padding: 0.625rem;
+  border-top: 1px solid #eee;
+  background: #fafafa;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  justify-content: center; /* Centra los botones */
+  align-items: center; /* Asegura que los botones se alineen correctamente */
+  max-height: 6.25rem; /* Ajusta según necesites */
+  overflow-y: auto; /* Permite desplazamiento si hay muchos botones */
+}
+
+.option-btn {
+  /* flex: 1; */
+  flex: 1 1 calc(33.33% - 10px); /* 3 columnas */
+  word-wrap: break-word; /* Evita que las palabras largas corten el botón */
+  white-space: normal; /* Permite que el texto se divida en varias líneas */
+  direction: ltr; /* Para que el texto siga alineado correctamente */
+  min-width: 120px; /* Ajusta según el diseño */
+  padding: 0.625rem;
+  background: #7ab730;
+  color: #414141;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+.option-btn:hover {
+  background: #44700f;
+}
+/* Estilo de mensajes */
+.chat-message {
+  margin: 0.25rem 0;
+  text-align: justify; /* Justificar texto */
+  font-size: 15px;
+  padding: 5px;
+}
+
+.chat-message strong {
+  color: #7ab730;
+}
+.chat-message.user {
+  text-align: right;
+}
+.chat-message.user strong {
+  color: #28a745;
+}
+
+p{
+  font-weight: bold;
+  color: black;
+}
+
+/* Contenedor de feedback */
+.rating-container {
+  margin: 0.625rem 0;
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding-top: 0.625rem;
+}
+.rating-container button {
+  background: #7ab730;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  margin: 0 0.313rem;
+  cursor: pointer;
+}
+.rating-container button:hover {
+  background: #7ab730;
+}
+/* Botón flotante para reabrir el chat */
+#chat-open-btn {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  background: #7ab730;
+  color: #000000;
+  border: none;
+  border-radius: 50%;
+  width: 4.125rem;
+  height: 4.125rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para el video */
+.video-container {
+  position: absolute;
+  top: -0.2rem;
+  left: 0.313rem;
+  width: 5.625rem;
+  height: 5.625rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+video {
+  width: 100%;
+  height: 100%;
+}
+
+/* Animación suave al abrir/cerrar el chat */
+#chat-container {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#chat-container.minimized {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+#feedback{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Estilos para móviles */
+@media (max-width: 600px) {
+  #chat-container {
+    width: 90%;
+    right: 5%;
+  }
+  .video-container {
+    width: 4rem;
+    height: 4rem;
+  }
+}
