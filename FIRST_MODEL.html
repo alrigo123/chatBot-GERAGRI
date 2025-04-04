@@ -189,6 +189,9 @@
         background-color: #edf7ed;
         align-self: flex-start;
         border-top-left-radius: 0;
+        line-height: 1.4; /* Reduce el espacio entre líneas (antes era 1.6) */
+        padding: 8px 12px; /* Reduce el padding vertical (antes 10px 14px) */
+        margin-bottom: 8px; /* Reduce el espacio entre mensajes (antes 12px) */
       }
 
       .user-message {
@@ -704,26 +707,14 @@
               {
                 text: "🚛 Permiso de Transporte",
                 action: "message",
-                response: `
-                            <p>Requisitos\n
-                                \n
-                                ESTA ES UNA PRUEBA PERO DEL N
-                                \n
-                                EN TEORIA DEBERIA SALTAR
-                                \n
-                                ESTO ES SALTADO
-                <dl>1. Solicitud a la Dirección Regional de Agricultura solicitando el inicio del procedimiento de declaración de Prescripción Adquisitiva de dominio,
-                    indicando la ubicación del predio y el código de Referencia Catastral.</dl>
-                <dl>2. Para persona natural: Copia simple de su D.N.I.</dl>
-                <dl>3. Para persona Jurídica: Copia Literal de Partida Registral donde figure la inscripción registral y poder del representante , copia simple del D.N.I.
-                    del representante.</dl>\n
-                <dl>4. Pruebas documentales de la posición y explotación económica, según relación contenida en el Art. Nº 41º del D.S. Nº 032-2008-VIVIENDA.</dl>
-                <dl>5. Declaración Jurada de no existir vinculo contractual relativo a la posición, entre el poseedor y el propietario original u otro poseedor, ni procesos
-                    judiciales o administrativos en los cuales se discuta la posesión o propiedad del predio, según formatos.</dl>
-                <dl>6. De encontrarse inscrito el predio: Copia literal actualizada de la partida registral donde se encuentra inscrito el predio y copia del plano que obra
-                    en el titulo archivado. De no encontrarse inscrito el predio: Certificado de búsqueda catastral.</dl>
-                <dl>7. Comprobante de pago.</dl>
-                </p>
+                response: `<strong>Requisitos:</strong>
+                <strong>1.</strong> Solicitud a la Dirección Regional de Agricultura solicitando el inicio del procedimiento de declaración de Prescripción Adquisitiva de dominio, indicando la ubicación del pred io y el código de Referencia Catastral.
+                <strong>2.</strong> Para persona natural: Copia simple de su D.N.I.\n
+                <strong>3.</strong> Para persona Jurídica: Copia Literal de Partida Registral donde figure la inscripción registral y poder del representante , copia simple del D.N.I. del representante.
+                <strong>4.</strong> Pruebas documentales de la posición y explotación económica, según relación contenida en el Art. Nº 41º del D.S. Nº 032-2008-VIVIENDA.\n
+                <strong>5.</strong> Declaración Jurada de no existir vinculo contractual relativo a la posición, entre el poseedor y el propietario original u otro poseedor, ni procesos judiciales o administrativos en los cuales se discuta la posesión o propiedad del predio, según formatos.\n
+                <strong>6.</strong> De encontrarse inscrito el predio: Copia literal actualizada de la partida registral donde se encuentra inscrito el predio y copia del plano que obra en el titulo archivado. De no encontrarse inscrito el predio: Certificado de búsqueda catastral.
+                <strong>7.</strong> Comprobante de pago.
                             `,
                 //response: "El permiso de transporte:\n\n• Validez: 72 horas\n• Requiere: Documento del vehículo\n• Costo: $25.000"
               },
