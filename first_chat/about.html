@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+    <link rel="stylesheet" href="chatbot.css" />
+</head>
+<body>
+    <nav>
+        <a href="chatBot.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="about.html">Acerca de</a>
+      </nav>
+    <div class="container">
+        <h1>About Us</h1>
+        <p>Welcome to our chatbot application! Our mission is to provide seamless and efficient communication solutions for businesses and individuals.</p>
+        <p>We are dedicated to delivering innovative technology that enhances user experiences and simplifies interactions.</p>
+        <p>Thank you for choosing our service!</p>
+    </div>
+
+
+<!-- Botón para abrir el chatbot -->
+<div class="chatbot-launcher ping-effect" id="launcher">
+    <i class="fas fa-robot"></i>
+  </div>
+
+  <!-- Contenedor del chatbot -->
+  <div class="chatbot-container" id="chatbot">
+    <div class="chatbot-header" id="chatbotHeader">
+      <div class="header-avatar">
+        <video
+          id="asistente-video"
+          class="video-avatar"
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          <source src="../PUBLIC/ASISTENTE.mp4" type="video/mp4" />
+          Tu navegador no soporta el elemento de video.
+        </video>
+      </div>
+      <div class="header-content">
+        <div class="chatbot-title">GERAGRI BOT</div>
+        <!-- <div class="chatbot-subtitle">Tu asistente agropecuario virtual</div> -->
+      </div>
+      <div class="chatbot-controls">
+        <button class="control-btn" id="minimizeBtn" title="Minimizar">
+          <i class="fas fa-minus"></i>
+        </button>
+        <button class="control-btn" id="closeBtn" title="Cerrar">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="chatbot-body">
+      <div class="chat-container">
+        <div class="chat-messages" id="chatMessages">
+          <!-- Mensajes aparecerán aquí -->
+        </div>
+
+        <div class="chat-input">
+          <input
+            type="text"
+            id="userInput"
+            placeholder="Escribe tu mensaje..."
+            autocomplete="off"
+          />
+          <button id="sendBtn" title="Enviar">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para imágenes -->
+  <div id="imageModal">
+    <span id="closeModal">&times;</span>
+    <img id="modalImage" />
+    <a id="openHD" target="_blank">Abrir</a>
+  </div>
+
+  <div id="chatbot-data" 
+  data-current-menu="main" 
+  data-is-minimized="false" 
+  data-is-closed="true"
+  style="display:none;">
+</div>
+
+
+    <script src="chatbot.js"></script>
+</body>
+</html>

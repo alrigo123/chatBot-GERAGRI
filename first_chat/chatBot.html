@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot Completo con Feedback al Terminar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="chatbot.css" />
+  </head>
+  <body>
+
+    <nav>
+      <a href="chatBot.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="about.html">Acerca de</a>
+    </nav>
+
+    <header class="landing-header"></header>
+      <h1>Bienvenido a GERAGRI</h1>
+      <p>Tu asistente agropecuario virtual para una mejor gestión agrícola.</p>
+    </header>
+
+    <section class="features">
+      <div class="feature">
+      <i class="fas fa-seedling"></i>
+      <h2>Asesoramiento Agrícola</h2>
+      <p>Obtén consejos personalizados para mejorar tus cultivos.</p>
+      </div>
+      <div class="feature">
+      <i class="fas fa-chart-line"></i>
+      <h2>Gestión de Datos</h2>
+      <p>Organiza y analiza tus datos agrícolas fácilmente.</p>
+      </div>
+      <div class="feature">
+      <i class="fas fa-comments"></i>
+      <h2>Soporte 24/7</h2>
+      <p>Resolvemos tus dudas en cualquier momento.</p>
+      </div>
+    </section>
+
+    <!-- Botón para abrir el chatbot -->
+    <div class="chatbot-launcher ping-effect" id="launcher">
+      <i class="fas fa-robot"></i>
+    </div>
+
+    <!-- Contenedor del chatbot -->
+    <div class="chatbot-container" id="chatbot">
+      <div class="chatbot-header" id="chatbotHeader">
+        <div class="header-avatar">
+          <video
+            id="asistente-video"
+            class="video-avatar"
+            autoplay
+            loop
+            muted
+            playsinline
+          >
+            <source src="../PUBLIC/ASISTENTE.mp4" type="video/mp4" />
+            Tu navegador no soporta el elemento de video.
+          </video>
+        </div>
+        <div class="header-content">
+          <div class="chatbot-title">GERAGRI BOT</div>
+          <!-- <div class="chatbot-subtitle">Tu asistente agropecuario virtual</div> -->
+        </div>
+        <div class="chatbot-controls">
+          <button class="control-btn" id="minimizeBtn" title="Minimizar">
+            <i class="fas fa-minus"></i>
+          </button>
+          <button class="control-btn" id="closeBtn" title="Cerrar">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="chatbot-body">
+        <div class="chat-container">
+          <div class="chat-messages" id="chatMessages">
+            <!-- Mensajes aparecerán aquí -->
+          </div>
+
+          <div class="chat-input">
+            <input
+              type="text"
+              id="userInput"
+              placeholder="Escribe tu mensaje..."
+              autocomplete="off"
+            />
+            <button id="sendBtn" title="Enviar">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para imágenes -->
+    <div id="imageModal">
+      <span id="closeModal">&times;</span>
+      <img id="modalImage" />
+      <a id="openHD" target="_blank">Abrir</a>
+    </div>
+
+
+    <div id="chatbot-data" 
+    data-current-menu="main" 
+    data-is-minimized="false" 
+    data-is-closed="true"
+    style="display:none;">
+</div>
+
+
+
+    <script src="chatbot.js"></script>
+  </body>
+</html>
